@@ -1,0 +1,32 @@
+#%RAML 1.0
+baseUri: https://localhost:8081/api
+title: sample-raml-application
+/helloworld: # declare a response
+  get: # HTTP method declaration
+    responses: # declare a response
+      200: # declare contant of response
+        body: # declare content of response
+          application/json: # media type
+            type: | # structural definition of a response (schema or type)
+              {
+                "title": "Hello world Response",
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                     "age": {
+                       "type": "string"
+                    }
+                }
+              }
+            example: # exmple of how a response looks
+              {
+                "message": "Hello world",
+                "age": "29"
+              }
+              
+                
+            
+          
+      
